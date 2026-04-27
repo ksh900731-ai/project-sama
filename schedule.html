@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PROJECT SAMA — 주간 시간표</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #FAF9F7;
+      color: #2C2C2A;
+      min-height: 100vh;
+      padding: 3rem 1.5rem;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+    }
+
+    .sama-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 36px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: #2C2C2A;
+      margin-bottom: 4px;
+    }
+
+    .sama-subtitle {
+      font-size: 12px;
+      color: #888780;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+
+    /* divider */
+    .section-divider {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 13px;
+      color: #888780;
+      letter-spacing: 0.14em;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-divider::before,
+    .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 0.5px;
+      background: #D3D1C7;
+    }
+
+    /* poster grid */
+    .poster-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 2.5rem;
+    }
+    .poster-slot {
+      border-radius: 12px;
+      border: 1.5px dashed #B4B2A9;
+      background: #F1EFE8;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .poster-slot-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #FAF9F7;
+      border: 0.5px solid #D3D1C7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: #888780;
+    }
+    .poster-slot-label { font-size: 11px; color: #5F5E5A; letter-spacing: 0.06em; }
+    .poster-slot-sub { font-size: 10px; color: #888780; }
+
+    /* legend cards */
+    .legend-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-bottom: 2rem;
+    }
+    .legend-card { border-radius: 12px; padding: 16px; }
+    .legend-dot { width: 10px; height: 10px; border-radius: 50%; margin-bottom: 10px; }
+    .legend-name { font-size: 12px; font-weight: 500; margin-bottom: 3px; }
+    .legend-desc { font-size: 11px; opacity: 0.75; }
+    .legend-classes { font-size: 10px; margin-top: 8px; opacity: 0.6; font-style: italic; line-height: 1.5; }
+
+    .c-terra { background: #F5EDE8; }
+    .c-terra .legend-dot { background: #C4623A; }
+    .c-terra .legend-name { color: #7A3520; }
+    .c-terra .legend-desc { color: #7A3520; }
+    .c-terra .legend-classes { color: #7A3520; }
+
+    .c-earth { background: #EDE8E0; }
+    .c-earth .legend-dot { background: #7A6248; }
+    .c-earth .legend-name { color: #4A3828; }
+    .c-earth .legend-desc { color: #4A3828; }
+    .c-earth .legend-classes { color: #4A3828; }
+
+    .c-forest { background: #E8F0E8; }
+    .c-forest .legend-dot { background: #3B6D11; }
+    .c-forest .legend-name { color: #1E3D08; }
+    .c-forest .legend-desc { color: #1E3D08; }
+    .c-forest .legend-classes { color: #1E3D08; }
+
+    .c-gold { background: #F5F0E0; }
+    .c-gold .legend-dot { background: #B89A3A; }
+    .c-gold .legend-name { color: #6B5618; }
+    .c-gold .legend-desc { color: #6B5618; }
+    .c-gold .legend-classes { color: #6B5618; }
+
+    /* notice */
+    .notice {
+      background: #F5EDE8;
+      border-left: 3px solid #C4623A;
+      border-radius: 0 8px 8px 0;
+      padding: 12px 18px;
+      font-size: 12px;
+      color: #7A3520;
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+    .notice strong { color: #5A2510; }
+
+    /* section label */
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #888780;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 0.5px solid #D3D1C7;
+    }
+
+    /* table */
+    .sched-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+      table-layout: fixed;
+    }
+    .sched-table th {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #888780;
+      padding: 8px;
+      text-align: center;
+      border-bottom: 0.5px solid #D3D1C7;
+    }
+    .sched-table th.time-col { width: 56px; text-align: left; }
+    .sched-table td {
+      padding: 6px 4px;
+      vertical-align: top;
+      border-bottom: 0.5px solid #E8E6E0;
+      text-align: center;
+    }
+    .sched-table td.time-cell {
+      font-size: 12px;
+      font-weight: 500;
+      color: #888780;
+      text-align: left;
+      padding-left: 0;
+      white-space: nowrap;
+    }
+
+    /* pill */
+    .pill {
+      display: inline-block;
+      border-radius: 6px;
+      padding: 6px 8px;
+      font-size: 10px;
+      line-height: 1.4;
+      text-align: center;
+      width: 100%;
+    }
+    .pill-en { font-size: 9px; opacity: 0.75; display: block; margin-top: 2px; }
+    .pill-teacher { font-size: 9px; opacity: 0.65; display: block; margin-top: 2px; }
+    .p-terra { background: #F5EDE8; color: #7A3520; }
+    .p-forest { background: #E8F0E8; color: #1E3D08; }
+    .p-earth { background: #EDE8E0; color: #4A3828; }
+    .p-gold { background: #F5F0E0; color: #6B5618; }
+    .p-empty { color: #B4B2A9; font-size: 11px; }
+
+    /* midday */
+    .midday-block {
+      border: 0.5px solid #D3D1C7;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin-bottom: 1.5rem;
+      background: #F1EFE8;
+    }
+    .midday-title {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: #888780;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .midday-list { display: flex; flex-direction: column; gap: 12px; }
+    .midday-item { display: flex; align-items: center; gap: 14px; }
+    .midday-bar { width: 3px; height: 38px; border-radius: 2px; flex-shrink: 0; }
+    .midday-bar-terra { background: #C4623A; }
+    .midday-bar-forest { background: #3B6D11; }
+    .midday-bar-earth { background: #7A6248; }
+    .midday-bar-gold { background: #B89A3A; }
+    .midday-ko { font-size: 13px; font-weight: 500; color: #2C2C2A; line-height: 1.3; }
+    .midday-en { font-size: 10px; color: #888780; margin-top: 2px; }
+    .midday-note { font-size: 10px; color: #888780; margin-left: auto; opacity: 0.8; white-space: nowrap; }
+
+    /* footer */
+    .footer-comments {
+      font-size: 11px;
+      color: #888780;
+      line-height: 2.2;
+      padding-top: 10px;
+      border-top: 0.5px solid #D3D1C7;
+    }
+    .footer-comments strong { color: #2C2C2A; }
+
+    @media (max-width: 600px) {
+      .poster-grid { grid-template-columns: repeat(2, 1fr); }
+      .legend-grid { grid-template-columns: repeat(2, 1fr); }
+      .sched-table th, .sched-table td { font-size: 9px; padding: 4px 2px; }
+      .pill { font-size: 9px; padding: 4px 3px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+
+    <h1 class="sama-title">PROJECT SAMA</h1>
+    <p class="sama-subtitle">주간 클래스 시간표 · Weekly Schedule</p>
+
+    <div class="section-divider">Brand Posters</div>
+    <div class="poster-grid">
+      <div class="poster-slot">
+        <div class="poster-slot-icon">+</div>
+        <div class="poster-slot-label">포스터 1</div>
+        <div class="poster-slot-sub">이미지 업로드</div>
+      </div>
+      <div class="poster-slot">
+        <div class="poster-slot-icon">+</div>
+        <div class="poster-slot-label">포스터 2</div>
+        <div class="poster-slot-sub">이미지 업로드</div>
+      </div>
+      <div class="poster-slot">
+        <div class="poster-slot-icon">+</div>
+        <div class="poster-slot-label">포스터 3</div>
+        <div class="poster-slot-sub">이미지 업로드</div>
+      </div>
+      <div class="poster-slot">
+        <div class="poster-slot-icon">+</div>
+        <div class="poster-slot-label">포스터 4</div>
+        <div class="poster-slot-sub">이미지 업로드</div>
+      </div>
+    </div>
+
+    <div class="section-divider">Color Guide</div>
+    <div class="legend-grid">
+      <div class="legend-card c-terra">
+        <div class="legend-dot"></div>
+        <div class="legend-name">에너지 / Energy</div>
+        <div class="legend-desc">열정 · 흐름 · 움직임</div>
+        <div class="legend-classes">빈야사 · insideflow · easyflow · 비트요가</div>
+      </div>
+      <div class="legend-card c-earth">
+        <div class="legend-dot"></div>
+        <div class="legend-name">몸 / Body</div>
+        <div class="legend-desc">근력 · 정렬 · 구조</div>
+        <div class="legend-classes">필라테스 · 바디웨이트</div>
+      </div>
+      <div class="legend-card c-forest">
+        <div class="legend-dot"></div>
+        <div class="legend-name">회복 / Restore</div>
+        <div class="legend-desc">치유 · 향기 · 쉼</div>
+        <div class="legend-classes">테라피 · 아로마힐링 · 쉼.요가</div>
+      </div>
+      <div class="legend-card c-gold">
+        <div class="legend-dot"></div>
+        <div class="legend-name">스페셜 / Special</div>
+        <div class="legend-desc">특별 · 프리미엄</div>
+        <div class="legend-classes">토요특강 · 심야요가 · 아뜰리에</div>
+      </div>
+    </div>
+
+    <div class="notice">
+      ⚠ 본 시간표는 임시 시간표입니다. 수업 시간 및 강사 배정은 <strong>사전 공지 후 변경</strong>될 수 있습니다. 최신 스케줄은 공지사항을 통해 확인해 주세요.
+    </div>
+
+    <p class="section-label">오전 클래스 — Morning</p>
+    <table class="sched-table">
+      <thead>
+        <tr>
+          <th class="time-col">시간</th>
+          <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time-cell">새벽</td>
+          <td><span class="p-empty">—</span></td>
+          <td><div class="pill p-terra">새벽요가<span class="pill-en">Dawn Ashtanga</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><span class="p-empty">—</span></td>
+          <td><span class="p-empty">—</span></td>
+          <td><div class="pill p-terra">새벽요가<span class="pill-en">Dawn Ashtanga</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><span class="p-empty">—</span></td>
+        </tr>
+        <tr>
+          <td class="time-cell">09:30</td>
+          <td><div class="pill p-forest">아로마힐링<span class="pill-en">Aroma Heal</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-terra">insideflow<span class="pill-en">Inner Flow</span><span class="pill-teacher">(DK)</span></div></td>
+          <td><div class="pill p-forest">테라피<span class="pill-en">Therapy Tools</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-terra">빈야사<span class="pill-en">Vinyasa Basic</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-terra">비트요가1<span class="pill-en">Beat Yoga</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><span class="p-empty">—</span></td>
+        </tr>
+        <tr>
+          <td class="time-cell">10:40</td>
+          <td><div class="pill p-terra">빈야사베이직<span class="pill-en">Vinyasa Basic</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-forest">테라피<span class="pill-en">Therapy Tools</span><span class="pill-teacher">(DK)</span></div></td>
+          <td><div class="pill p-terra">easyflow<span class="pill-en">Gentle Flow</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-terra">insideflow<span class="pill-en">Inner Flow</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-forest">아로마힐링<span class="pill-en">Aroma Heal</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><span class="p-empty">—</span></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="midday-block">
+      <p class="midday-title">낮 시간대 — 진행 예정 프로그램 · 세부 일정 추후 공지</p>
+      <div class="midday-list">
+        <div class="midday-item">
+          <div class="midday-bar midday-bar-forest"></div>
+          <div>
+            <div class="midday-ko">임산부 요가</div>
+            <div class="midday-en">Prenatal Yoga</div>
+          </div>
+          <div class="midday-note">별도 일정 운영</div>
+        </div>
+        <div class="midday-item">
+          <div class="midday-bar midday-bar-terra"></div>
+          <div>
+            <div class="midday-ko">키즈 요가</div>
+            <div class="midday-en">Kids Yoga</div>
+          </div>
+          <div class="midday-note">별도 일정 운영</div>
+        </div>
+        <div class="midday-item">
+          <div class="midday-bar midday-bar-earth"></div>
+          <div>
+            <div class="midday-ko">개인레슨</div>
+            <div class="midday-en">Private Lesson · 1:1 / 2:1</div>
+          </div>
+          <div class="midday-note">문의 후 조율</div>
+        </div>
+        <div class="midday-item">
+          <div class="midday-bar midday-bar-gold"></div>
+          <div>
+            <div class="midday-ko">사마 아뜰리에</div>
+            <div class="midday-en">SAMA Atelier</div>
+          </div>
+          <div class="midday-note">웰니스 클래스</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-label">저녁 클래스 — Evening</p>
+    <table class="sched-table">
+      <thead>
+        <tr>
+          <th class="time-col">시간</th>
+          <th>월</th><th>화</th><th>수</th><th>목</th><th>금</th><th>토</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="time-cell">18:10</td>
+          <td><div class="pill p-earth">필라테스<span class="pill-en">Pilates</span><span class="pill-teacher">[Lucy]</span></div></td>
+          <td><div class="pill p-terra">빈야사 얼라이먼트<span class="pill-en">Vinyasa Align</span><span class="pill-teacher">(DK)</span></div></td>
+          <td><div class="pill p-terra">비트요가1<span class="pill-en">Beat Yoga</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-earth">필라테스<span class="pill-en">Pilates</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-forest">아로마힐링 싱잉볼<span class="pill-en">Sound & Aroma</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><span class="p-empty">—</span></td>
+        </tr>
+        <tr>
+          <td class="time-cell">19:20</td>
+          <td><div class="pill p-earth">바디웨이트<span class="pill-en">Body Weight</span><span class="pill-teacher">[Lucy]</span></div></td>
+          <td><div class="pill p-terra">insideflow<span class="pill-en">Inner Flow</span><span class="pill-teacher">(DK)</span></div></td>
+          <td><div class="pill p-forest">테라피<span class="pill-en">Therapy Tools</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-terra">빈야사<span class="pill-en">Vinyasa Basic</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-forest">쉼.요가<span class="pill-en">Rest Yoga</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><span class="p-empty">—</span></td>
+        </tr>
+        <tr>
+          <td class="time-cell">20:30</td>
+          <td><span class="p-empty">—</span></td>
+          <td><div class="pill p-forest">테라피<span class="pill-en">Therapy Tools</span><span class="pill-teacher">(DK)</span></div></td>
+          <td><div class="pill p-forest">아로마힐링 싱잉볼<span class="pill-en">Sound & Aroma</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><div class="pill p-terra">insideflow<span class="pill-en">Inner Flow</span><span class="pill-teacher">[Lua]</span></div></td>
+          <td><span class="p-empty">—</span></td>
+          <td><div class="pill p-gold">토요특강<span class="pill-en">SAMA Special</span><span class="pill-teacher">[Lua]</span></div></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="footer-comments">
+      <div>🌙 <strong>주 1~2회 심야요가 Midnight Flow 진행 예정</strong> (21:30) — 일정 추후 공지</div>
+      <div>🏃 <strong>러닝클래스 Running Class</strong>는 사전 고지 후 신청 가능합니다</div>
+    </div>
+
+  </div>
+</body>
+</html>
