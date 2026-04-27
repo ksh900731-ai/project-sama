@@ -741,11 +741,7 @@
   <!-- 오버레이 -->
   <div style="position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(28,24,20,0.4) 0%, rgba(28,24,20,0.2) 50%, rgba(28,24,20,0.85) 100%); z-index: 1;"></div>
 
-  <!-- 동영상 교체 버튼 (관리자용) -->
-  <label style="position: absolute; top: 24px; right: 24px; z-index: 10; cursor: pointer; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12); padding: 8px 16px; font-size: 10px; letter-spacing: 2px; color: var(--warm-gray); border-radius: 2px; transition: all 0.3s;">
-    ▶ 동영상 교체
-    <input type="file" accept="video/*" style="display: none;" onchange="changeVideo(event)">
-  </label>
+
 
   <!-- 히어로 콘텐츠 -->
   <div style="position: relative; z-index: 2; display: flex; flex-direction: column; align-items: center; text-align: center;">
@@ -768,15 +764,7 @@
 
 <!-- POSTER 1 -->
 <div class="poster-section reveal" style="width: 100%; max-width: 100%; padding: 0; margin: 0; position: relative; overflow: hidden; height: 500px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(139,111,71,0.15); border-bottom: 1px solid rgba(139,111,71,0.15);">
-  <img id="poster1Img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s ease; display: block;">
-  <div id="poster1Placeholder" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;">
-    <div style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: rgba(139,111,71,0.2); letter-spacing: 8px;">SAMA</div>
-    <label style="cursor: pointer; background: rgba(139,111,71,0.1); border: 1px solid rgba(139,111,71,0.3); padding: 12px 24px; font-size: 11px; letter-spacing: 2px; color: var(--earth); border-radius: 2px; transition: all 0.3s;">
-      + 포스터 이미지 업로드
-      <input type="file" accept="image/*" style="display: none;" onchange="uploadPoster(event, 'poster1Img', 'poster1Placeholder')">
-    </label>
-    <p style="font-size: 10px; color: var(--warm-gray); letter-spacing: 1px; opacity: 0.5;">권장 사이즈 · 1920 × 500px</p>
-  </div>
+  <img id="poster1Img" src="poster1.jpg" alt="SAMA Poster 1" style="width: 100%; height: 100%; object-fit: cover; display: block;">
 </div>
 
 <!-- 5DAY PASS -->
@@ -888,15 +876,7 @@
 
 <!-- POSTER 2 -->
 <div class="poster-section reveal" style="width: 100%; max-width: 100%; padding: 0; margin: 0; position: relative; overflow: hidden; height: 500px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(139,111,71,0.15); border-bottom: 1px solid rgba(139,111,71,0.15);">
-  <img id="poster2Img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s ease; display: block;">
-  <div id="poster2Placeholder" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;">
-    <div style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: rgba(139,111,71,0.2); letter-spacing: 8px;">SAMA</div>
-    <label style="cursor: pointer; background: rgba(139,111,71,0.1); border: 1px solid rgba(139,111,71,0.3); padding: 12px 24px; font-size: 11px; letter-spacing: 2px; color: var(--earth); border-radius: 2px; transition: all 0.3s;">
-      + 포스터 이미지 업로드
-      <input type="file" accept="image/*" style="display: none;" onchange="uploadPoster(event, 'poster2Img', 'poster2Placeholder')">
-    </label>
-    <p style="font-size: 10px; color: var(--warm-gray); letter-spacing: 1px; opacity: 0.5;">권장 사이즈 · 1920 × 500px</p>
-  </div>
+  <img id="poster2Img" src="poster2.jpg" alt="SAMA Poster 2" style="width: 100%; height: 100%; object-fit: cover; display: block;">
 </div>
 
 <!-- OPEN SPECIAL vs REGULAR -->
@@ -1145,15 +1125,7 @@
 
 <!-- POSTER 3 -->
 <div class="poster-section reveal" style="width: 100%; max-width: 100%; padding: 0; margin: 0; position: relative; overflow: hidden; height: 500px; background: rgba(255,255,255,0.02); border-top: 1px solid rgba(139,111,71,0.15); border-bottom: 1px solid rgba(139,111,71,0.15);">
-  <img id="poster3Img" src="" alt="" style="width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s ease; display: block;">
-  <div id="poster3Placeholder" style="position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px;">
-    <div style="font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: rgba(139,111,71,0.2); letter-spacing: 8px;">SAMA</div>
-    <label style="cursor: pointer; background: rgba(139,111,71,0.1); border: 1px solid rgba(139,111,71,0.3); padding: 12px 24px; font-size: 11px; letter-spacing: 2px; color: var(--earth); border-radius: 2px; transition: all 0.3s;">
-      + 포스터 이미지 업로드
-      <input type="file" accept="image/*" style="display: none;" onchange="uploadPoster(event, 'poster3Img', 'poster3Placeholder')">
-    </label>
-    <p style="font-size: 10px; color: var(--warm-gray); letter-spacing: 1px; opacity: 0.5;">권장 사이즈 · 1920 × 500px</p>
-  </div>
+  <img id="poster3Img" src="poster3.jpg" alt="SAMA Poster 3" style="width: 100%; height: 100%; object-fit: cover; display: block;">
 </div>
 
 <!-- POLICY -->
@@ -1194,23 +1166,7 @@
 
 <!-- LOGO SECTION -->
 <div class="reveal" style="text-align: center; padding: 60px 20px; background: rgba(255,255,255,0.01); border-top: 1px solid rgba(139,111,71,0.15);">
-  <div id="logoWrapper" style="display: inline-block; position: relative;">
-    
-    <!-- 로고 이미지 -->
-    <img id="logoImg" src="" alt="Project SAMA Logo"
-      style="max-width: 300px; max-height: 200px; object-fit: contain; opacity: 0; transition: opacity 0.5s ease; display: block; margin: 0 auto;">
-    
-    <!-- 로고 업로드 플레이스홀더 -->
-    <div id="logoPlaceholder" style="display: flex; flex-direction: column; align-items: center; gap: 16px;">
-      <div style="font-family: 'Cormorant Garamond', serif; font-size: 64px; font-weight: 300; color: rgba(139,111,71,0.15); letter-spacing: 12px;">SAMA</div>
-      <label style="cursor: pointer; background: rgba(139,111,71,0.08); border: 1px solid rgba(139,111,71,0.25); padding: 12px 28px; font-size: 11px; letter-spacing: 2px; color: var(--earth); border-radius: 2px; transition: all 0.3s;">
-        + 로고 이미지 업로드
-        <input type="file" accept="image/*" style="display: none;" onchange="uploadLogo(event)">
-      </label>
-      <p style="font-size: 10px; color: var(--warm-gray); letter-spacing: 1px; opacity: 0.4;">PNG / SVG 권장 · 투명 배경</p>
-    </div>
-
-  </div>
+  <img src="logo.png" alt="Project SAMA Logo" style="max-width: 300px; max-height: 200px; object-fit: contain; display: block; margin: 0 auto;">
 </div>
 
 <!-- FOOTER -->
@@ -1235,41 +1191,7 @@
   }, { threshold: 0.1 });
   reveals.forEach(el => observer.observe(el));
 
-  // 동영상 교체
-  function changeVideo(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
-    const video = document.getElementById('heroBg');
-    video.src = url;
-    video.load();
-    video.play();
-    video.style.opacity = '0.4';
-  }
 
-  // 로고 업로드
-  function uploadLogo(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
-    const img = document.getElementById('logoImg');
-    const placeholder = document.getElementById('logoPlaceholder');
-    img.src = url;
-    img.style.opacity = '1';
-    placeholder.style.display = 'none';
-  }
-
-  // 포스터 이미지 업로드
-  function uploadPoster(event, imgId, placeholderId) {
-    const file = event.target.files[0];
-    if (!file) return;
-    const url = URL.createObjectURL(file);
-    const img = document.getElementById(imgId);
-    const placeholder = document.getElementById(placeholderId);
-    img.src = url;
-    img.style.opacity = '1';
-    placeholder.style.display = 'none';
-  }
 </script>
 
 </body>
