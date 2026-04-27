@@ -252,6 +252,139 @@
     .coupon-grid { grid-template-columns: 1fr; }
   }
 
+  /* ===== 모바일 반응형 ===== */
+  @media (max-width: 768px) {
+
+    /* 히어로 */
+    .hero-title {
+      font-size: 56px !important;
+      letter-spacing: -1px;
+    }
+
+    /* 섹션 패딩 */
+    section {
+      padding: 48px 16px;
+    }
+
+    /* 섹션 타이틀 */
+    .section-title {
+      font-size: 36px !important;
+      margin-bottom: 24px;
+    }
+
+    /* 패스 카드 */
+    .pass-card {
+      padding: 28px 20px;
+    }
+
+    .pass-price {
+      font-size: 48px;
+    }
+
+    /* 쿠폰 그리드 */
+    .coupon-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .coupon-card {
+      padding: 24px;
+    }
+
+    /* 멤버십 테이블 */
+    .membership-table {
+      min-width: unset;
+      width: 100%;
+    }
+
+    .membership-table th,
+    .membership-table td {
+      padding: 12px 10px;
+      font-size: 13px;
+    }
+
+    .membership-table td {
+      font-size: 13px;
+    }
+
+    .best-label {
+      display: none;
+    }
+
+    /* 혜택 그리드 */
+    .benefits-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    .benefit-card {
+      padding: 24px;
+    }
+
+    /* 아뜰리에 */
+    .atelier-card {
+      padding: 32px 24px;
+    }
+
+    .atelier-title {
+      font-size: 32px;
+    }
+
+    .atelier-specs {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* 정책 */
+    .policy-card {
+      padding: 16px 20px;
+    }
+
+    /* CTA */
+    .cta-section {
+      padding: 64px 16px;
+    }
+
+    /* 오픈특가 비교 테이블 */
+    .open-special {
+      padding: 28px 20px;
+    }
+
+    .open-special::after {
+      display: none;
+    }
+
+    /* 비교 테이블 모바일 */
+    .compare-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
+    /* 주말 클래스 카드 */
+    .weekend-grid {
+      grid-template-columns: 1fr !important;
+    }
+
+    /* 포스터 높이 */
+    .poster-section {
+      height: 250px !important;
+    }
+
+    /* 이벤트 배너 */
+    .event-banner h2 {
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    /* 상태 테이블 */
+    .status-table th,
+    .status-table td {
+      padding: 10px 8px;
+      font-size: 12px;
+    }
+
+    .status-table td:first-child {
+      font-size: 11px;
+    }
+  }
+
   .coupon-card {
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(139,111,71,0.2);
@@ -323,7 +456,7 @@
   .membership-table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 600px;
+    min-width: 0;
   }
 
   .membership-table th {
@@ -750,7 +883,7 @@
     <p class="hero-sub">몸, 마음, 그리고 관계</p>
     <p class="hero-desc">최대 10인 소수정원으로 운영되는<br>발리 감성의 웰니스 그룹 스튜디오</p>
     <div class="hero-line"></div>
-    <p class="hero-desc" style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase;">월 — 금 · 하루 5타임</p>
+    <p class="hero-desc" style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase;">월 — 금 운영</p>
   </div>
 </section>
 
@@ -888,8 +1021,8 @@
   </p>
 
   <!-- COMPARE TABLE -->
-  <div style="overflow-x: auto;">
-    <table style="width: 100%; border-collapse: collapse; min-width: 560px;">
+  <div class="compare-table-wrap" style="overflow-x: auto;">
+    <table style="width: 100%; border-collapse: collapse; min-width: 0;">
       <thead>
         <tr>
           <th style="font-size: 10px; letter-spacing: 3px; color: var(--warm-gray); padding: 14px 20px; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.06); font-weight: 400;">구분</th>
@@ -900,37 +1033,37 @@
       </thead>
       <tbody>
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
-          <td style="padding: 16px 20px; font-size: 13px; color: var(--warm-gray); letter-spacing: 0.5px;">주 2회 · 1개월</td>
+          <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 2회 · 1개월</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">210,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">147,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">63,000원 ↓</td>
         </tr>
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
-          <td style="padding: 16px 20px; font-size: 13px; color: var(--warm-gray); letter-spacing: 0.5px;">주 3회 · 1개월</td>
+          <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 3회 · 1개월</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">240,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">168,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">72,000원 ↓</td>
         </tr>
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
-          <td style="padding: 16px 20px; font-size: 13px; color: var(--warm-gray); letter-spacing: 0.5px;">주 5회 · 1개월</td>
+          <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 5회 · 1개월</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">270,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">189,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">81,000원 ↓</td>
         </tr>
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
-          <td style="padding: 16px 20px; font-size: 13px; color: var(--warm-gray); letter-spacing: 0.5px;">주 2회 · 3개월</td>
+          <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 2회 · 3개월</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">480,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">336,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">144,000원 ↓</td>
         </tr>
         <tr style="border-bottom: 1px solid rgba(196,114,74,0.2); background: rgba(196,114,74,0.06);">
-          <td style="padding: 16px 20px; font-size: 13px; color: var(--cream); letter-spacing: 0.5px;">주 3회 · 3개월 <span style="font-size: 9px; background: var(--terra); color: white; padding: 2px 8px; border-radius: 50px; margin-left: 6px; vertical-align: middle;">BEST</span></td>
+          <td style="padding: 12px 10px; font-size: 12px; color: var(--cream); letter-spacing: 0px;">주 3회 · 3개월 <span style="font-size: 9px; background: var(--terra); color: white; padding: 2px 6px; border-radius: 50px; margin-left: 4px; vertical-align: middle;">BEST</span></td>
           <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">540,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 20px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.06);">378,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">162,000원 ↓</td>
         </tr>
         <tr>
-          <td style="padding: 16px 20px; font-size: 13px; color: var(--warm-gray); letter-spacing: 0.5px;">주 5회 · 3개월</td>
+          <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 5회 · 3개월</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">600,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">420,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">180,000원 ↓</td>
@@ -953,7 +1086,7 @@
     매주 토 · 일 · 각 분야 초청 강사의 특별한 요가 클래스
   </p>
 
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+  <div class="weekend-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
 
     <!-- 정규 멤버 -->
     <div style="background: linear-gradient(135deg, rgba(74,94,58,0.15) 0%, rgba(74,94,58,0.05) 100%); border: 1px solid rgba(74,94,58,0.4); border-radius: 2px; padding: 40px 32px; position: relative;">
@@ -1090,12 +1223,10 @@
 <section class="reveal">
   <div class="section-label">Monthly Special</div>
   <div class="atelier-card">
-    <p class="section-label">창립 멤버 전용</p>
     <h2 class="atelier-title">SAMA <em>Atelier</em></h2>
     <p style="font-size: 13px; color: var(--terra); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px;">단순한 요가 그 이상의 경험</p>
     <p class="atelier-body">
-      사마 아뜰리에는 1기 창립 멤버만을 위한 특별한 문화 클래스예요.<br>
-      매달 다양한 분야의 전문가를 초청해 함께 만들고 배우는 시간을 가져요.<br><br>
+      사마 아뜰리에는 매달 다양한 분야의 전문가를 초청해 함께 만들고 배우는 특별한 문화 클래스예요.<br><br>
       도자기, 플라워, 캔들, 가죽공예 등<br>
       매달 바뀌는 테마로 새로운 경험을 선물해드립니다.<br>
       몸과 마음, 그리고 일상까지 풍요롭게 채워드립니다.
@@ -1103,7 +1234,7 @@
     <div class="atelier-specs">
       <div class="spec-item">
         <div class="spec-label">대상</div>
-        <div class="spec-value">사마 1기 창립 멤버 (활성 회원)</div>
+        <div class="spec-value">사마 멤버 누구나</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">횟수</div>
@@ -1111,7 +1242,7 @@
       </div>
       <div class="spec-item">
         <div class="spec-label">참가비</div>
-        <div class="spec-value">연 1회 무료 · 이후 50% 할인 (재료비 별도)</div>
+        <div class="spec-value">창립 멤버 · 연 1회 무료 · 이후 50% 할인<br>일반 멤버 · 별도 가격 안내 (재료비 별도)</div>
       </div>
       <div class="spec-item">
         <div class="spec-label">내용</div>
@@ -1138,7 +1269,7 @@
   </div>
   <div class="policy-card">
     <div class="policy-title">운영 일정</div>
-    <div class="policy-text">월요일 ~ 금요일 · 하루 5타임 운영<br>정확한 타임 일정은 별도 공지 드립니다.</div>
+    <div class="policy-text">월요일 ~ 금요일 운영<br>정확한 타임 일정은 별도 공지 드립니다.</div>
   </div>
   <div class="policy-card">
     <div class="policy-title">결제 안내</div>
@@ -1165,8 +1296,8 @@
 </div>
 
 <!-- LOGO SECTION -->
-<div class="reveal" style="text-align: center; padding: 60px 20px; background: rgba(255,255,255,0.01); border-top: 1px solid rgba(139,111,71,0.15);">
-  <img src="logo.png" alt="Project SAMA Logo" style="max-width: 300px; max-height: 200px; object-fit: contain; display: block; margin: 0 auto;">
+<div class="reveal" style="text-align: center; padding: 0; background: rgba(255,255,255,0.01); border-top: 1px solid rgba(139,111,71,0.15);">
+  <img src="logo.png" alt="Project SAMA Logo" style="width: 100%; max-width: 100%; object-fit: cover; display: block;">
 </div>
 
 <!-- FOOTER -->
