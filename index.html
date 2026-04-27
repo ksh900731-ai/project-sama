@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PROJECT SAMA — Membership</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Krona+One&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
     --earth: #8B6F47;
@@ -64,19 +64,21 @@
   }
 
   .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(56px, 10vw, 120px);
-    font-weight: 300;
+    font-family: 'Krona One', sans-serif;
+    font-size: clamp(40px, 8vw, 90px);
+    font-weight: 400;
     line-height: 0.9;
-    letter-spacing: -2px;
+    letter-spacing: 4px;
     margin-bottom: 8px;
     opacity: 0;
     animation: fadeUp 0.8s ease forwards 0.4s;
   }
 
   .hero-title span {
-    font-style: italic;
+    font-family: 'Krona One', sans-serif;
+    font-style: normal;
     color: var(--earth);
+    letter-spacing: 6px;
   }
 
   .hero-sub {
@@ -325,7 +327,8 @@
     }
 
     .atelier-title {
-      font-size: 32px;
+      font-size: 24px;
+      letter-spacing: 2px;
     }
 
     .atelier-specs {
@@ -640,13 +643,16 @@
   }
 
   .atelier-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 48px;
-    font-weight: 300;
+    font-family: 'Krona One', sans-serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 3px;
     margin-bottom: 8px;
   }
 
   .atelier-title em {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
     font-style: italic;
     color: var(--earth);
   }
@@ -784,9 +790,9 @@
   }
 
   .footer-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 32px;
-    font-weight: 300;
+    font-family: 'Krona One', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
     letter-spacing: 8px;
     color: var(--earth);
     margin-bottom: 16px;
@@ -883,7 +889,7 @@
     <p class="hero-sub">몸, 마음, 그리고 관계</p>
     <p class="hero-desc">최대 10인 소수정원으로 운영되는<br>발리 감성의 웰니스 그룹 스튜디오</p>
     <div class="hero-line"></div>
-    <p class="hero-desc" style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase;">월 — 금 운영</p>
+    <p class="hero-desc" style="font-size: 11px; letter-spacing: 2px; text-transform: uppercase;">월 — 금 · 사머의 플로우<br>토 · 일 · 사마 스페셜 플로우</p>
     <p class="hero-desc" style="font-size: 13px; letter-spacing: 1px; margin-top: 16px; color: var(--warm-gray); font-style: italic;">
       사마에서는 구성원을 <strong style="color: var(--earth); font-style: normal;">사머(Samer)</strong> 라고 불러요.<br>
       몸·마음·관계, 세 가지 파도를 함께 타는 사람들이에요.
@@ -997,19 +1003,19 @@
       <tbody>
         <tr>
           <td>주 2회</td>
-          <td>210,000</td>
+          <td>240,000</td>
           <td>480,000</td>
           <td>840,000</td>
         </tr>
         <tr>
           <td>주 3회</td>
-          <td>240,000</td>
+          <td>270,000</td>
           <td class="best">540,000 <span class="best-label">BEST</span></td>
           <td>936,000</td>
         </tr>
         <tr>
           <td>주 5회</td>
-          <td>270,000</td>
+          <td>350,000</td>
           <td>600,000</td>
           <td>1,020,000</td>
         </tr>
@@ -1023,6 +1029,9 @@
     <a href="schedule.html" style="display: inline-block; font-size: 12px; letter-spacing: 3px; color: var(--earth); text-decoration: none; border: 1px solid rgba(139,111,71,0.4); padding: 14px 32px; border-radius: 2px; transition: all 0.3s; text-transform: uppercase;">
       사마의 하루 들여다보기 →
     </a>
+    <span style="font-size: 12px; color: var(--warm-gray); margin-left: 12px;">
+      (<a href="schedule.html" style="color: var(--earth); text-decoration: underline; letter-spacing: 1px;">시간표 보기</a>)
+    </span>
   </div>
 </section>
 
@@ -1039,19 +1048,17 @@
   <h2 class="section-title">지금이 가장<br><em>좋은 가격</em>입니다</h2>
   <p style="font-size: 13px; color: var(--warm-gray); margin-bottom: 40px; letter-spacing: 0.5px; line-height: 2;">
     모집 단계가 지날수록 가격은 올라갑니다.<br>
-    사마를 먼저 만난 사람이 가장 합리적으로 시작할 수 있어요.
+    사마의 파도에 먼저 올라탄 사머가 가장 깊이 누릴 수 있어요.
   </p>
 
-  <!-- 타임라인 -->
   <div style="position: relative; padding-left: 24px; border-left: 1px solid rgba(139,111,71,0.3);">
 
-    <!-- 오픈클래스 참여자 -->
+    <!-- 오픈클래스 참여자 - 진행중 -->
     <div style="position: relative; margin-bottom: 32px;">
       <div style="position: absolute; left: -30px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--terra); border: 2px solid var(--dark); box-shadow: 0 0 0 4px rgba(196,114,74,0.2);"></div>
       <div style="font-size: 10px; letter-spacing: 2px; color: var(--terra); margin-bottom: 4px; text-transform: uppercase;">🔥 진행 중 · ~5월 12일</div>
       <div style="font-size: 20px; font-weight: 500; margin-bottom: 4px; color: var(--cream);">오픈클래스 참여자 특가</div>
       <div style="font-size: 13px; color: var(--warm-gray);">정규가 대비 <span style="color: var(--terra); font-weight: 500;">30% 할인</span> · 주 3회 3개월 <span style="color: var(--terra); font-weight: 500;">378,000원</span></div>
-      <!-- 카운트다운 오픈클래스용 -->
       <div style="margin-top: 16px; display: inline-flex; gap: 8px; background: rgba(196,114,74,0.08); border: 1px solid rgba(196,114,74,0.2); border-radius: 2px; padding: 12px 20px;">
         <div style="text-align: center;">
           <div style="font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; line-height: 1;" id="cd-days">00</div>
@@ -1075,17 +1082,17 @@
       </div>
     </div>
 
-    <!-- 1차 얼리버드 -->
-    <div style="position: relative; margin-bottom: 32px; opacity: 0.4;">
-      <div style="position: absolute; left: -30px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: rgba(139,111,71,0.4); border: 2px solid var(--dark);"></div>
-      <div style="font-size: 10px; letter-spacing: 2px; color: var(--warm-gray); margin-bottom: 4px; text-transform: uppercase;">예정 · 5월 13일 — 5월 26일</div>
-      <div style="font-size: 20px; font-weight: 500; margin-bottom: 4px;">1차 얼리버드</div>
+    <!-- 1차 얼리버드 - 예정 -->
+    <div style="position: relative; margin-bottom: 32px;">
+      <div style="position: absolute; left: -30px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--terra); border: 2px solid var(--dark); box-shadow: 0 0 0 4px rgba(196,114,74,0.2);"></div>
+      <div style="font-size: 10px; letter-spacing: 2px; color: var(--terra); margin-bottom: 4px; text-transform: uppercase;">🔥 진행 중 · ~5월 26일</div>
+      <div style="font-size: 20px; font-weight: 500; margin-bottom: 4px; color: var(--cream);">1차 얼리버드</div>
       <div style="font-size: 13px; color: var(--warm-gray);">정규가 대비 <span style="color: var(--earth);">20% 할인</span> · 주 3회 3개월 <span style="color: var(--earth);">432,000원</span></div>
     </div>
 
-    <!-- 2차 얼리버드 -->
+    <!-- 2차 얼리버드 - 예정 -->
     <div style="position: relative; margin-bottom: 32px; opacity: 0.4;">
-      <div style="position: absolute; left: -30px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: rgba(139,111,71,0.4); border: 2px solid var(--dark);"></div>
+      <div style="position: absolute; left: -30px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: rgba(139,111,71,0.3); border: 2px solid var(--dark);"></div>
       <div style="font-size: 10px; letter-spacing: 2px; color: var(--warm-gray); margin-bottom: 4px; text-transform: uppercase;">예정 · 5월 27일 — 6월 26일</div>
       <div style="font-size: 20px; font-weight: 500; margin-bottom: 4px;">2차 얼리버드</div>
       <div style="font-size: 13px; color: var(--warm-gray);">정규가 대비 <span style="color: var(--earth);">10% 할인</span> · 주 3회 3개월 <span style="color: var(--earth);">486,000원</span></div>
@@ -1096,7 +1103,7 @@
       <div style="position: absolute; left: -30px; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: rgba(139,111,71,0.3); border: 2px solid var(--dark);"></div>
       <div style="font-size: 10px; letter-spacing: 2px; color: var(--warm-gray); margin-bottom: 4px; text-transform: uppercase;">6월 27일 ~</div>
       <div style="font-size: 20px; font-weight: 500; margin-bottom: 4px;">정규가</div>
-      <div style="font-size: 13px; color: var(--warm-gray);">할인 없음 · 주 3회 3개월 <span>540,000원</span></div>
+      <div style="font-size: 13px; color: var(--warm-gray);">할인 없음 · 주 3회 3개월 540,000원</div>
     </div>
 
   </div>
@@ -1139,21 +1146,21 @@
       <tbody>
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
           <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 2회 · 1개월</td>
-          <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">210,000원</td>
-          <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">147,000원</td>
+          <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">240,000원</td>
+          <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">168,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">63,000원 ↓</td>
         </tr>
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
           <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 3회 · 1개월</td>
-          <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">240,000원</td>
-          <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">168,000원</td>
-          <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">72,000원 ↓</td>
-        </tr>
-        <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
-          <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 5회 · 1개월</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">270,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">189,000원</td>
           <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">81,000원 ↓</td>
+        </tr>
+        <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
+          <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 5회 · 1개월</td>
+          <td style="padding: 16px 20px; text-align: right; font-size: 15px; text-decoration: line-through; color: var(--warm-gray);">350,000원</td>
+          <td style="padding: 16px 20px; text-align: right; font-size: 17px; color: var(--terra); font-weight: 500; background: rgba(196,114,74,0.04);">245,000원</td>
+          <td style="padding: 16px 20px; text-align: right; font-size: 12px; color: var(--earth);">105,000원 ↓</td>
         </tr>
         <tr style="border-bottom: 1px solid rgba(255,255,255,0.04);">
           <td style="padding: 12px 10px; font-size: 12px; color: var(--warm-gray); letter-spacing: 0px;">주 2회 · 3개월</td>
@@ -1374,7 +1381,7 @@
   </div>
   <div class="policy-card">
     <div class="policy-title">운영 일정</div>
-    <div class="policy-text">월요일 ~ 금요일 운영<br>정확한 타임 일정은 별도 공지 드립니다.</div>
+    <div class="policy-text">월 — 금 · 사머의 플로우 (정규 클래스)<br>토 · 일 · 사마 스페셜 플로우 (초청 강사 특별 클래스)<br>정확한 타임 일정은 별도 공지 드립니다.</div>
   </div>
   <div class="policy-card">
     <div class="policy-title">결제 안내</div>
@@ -1406,8 +1413,42 @@
   <div class="footer-logo">SAMA</div>
   <div class="footer-text">
     Project SAMA · Wellness Group Studio<br>
-    천안 백석동 · Mon — Fri<br><br>
-    Instagram @project_sama · KakaoTalk 프로젝트사마
+    천안 백석동 · Mon — Fri
+  </div>
+
+  <!-- SNS 버튼 -->
+  <div style="display: flex; justify-content: center; gap: 16px; margin-top: 28px; flex-wrap: wrap;">
+
+    <!-- 인스타그램 -->
+    <a href="https://instagram.com/projectsama_official" target="_blank"
+      style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; border: 1px solid rgba(139,111,71,0.3); border-radius: 2px; text-decoration: none; color: var(--cream); font-size: 12px; letter-spacing: 1px; transition: all 0.3s; background: rgba(255,255,255,0.03);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+        <circle cx="12" cy="12" r="4"/>
+        <circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/>
+      </svg>
+      @projectsama_official
+    </a>
+
+    <!-- 블로그 -->
+    <a href="https://blog.naver.com/projectsama" target="_blank"
+      style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; border: 1px solid rgba(139,111,71,0.3); border-radius: 2px; text-decoration: none; color: var(--cream); font-size: 12px; letter-spacing: 1px; transition: all 0.3s; background: rgba(255,255,255,0.03);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+        <path d="M8 12h8M8 8h8M8 16h5"/>
+      </svg>
+      블로그
+    </a>
+
+    <!-- 카카오톡 -->
+    <a href="https://pf.kakao.com/_projectsama" target="_blank"
+      style="display: flex; align-items: center; gap: 8px; padding: 12px 20px; border: 1px solid rgba(139,111,71,0.3); border-radius: 2px; text-decoration: none; color: var(--cream); font-size: 12px; letter-spacing: 1px; transition: all 0.3s; background: rgba(255,255,255,0.03);">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M12 3C6.48 3 2 6.92 2 11.7c0 3.01 1.74 5.65 4.36 7.22l-1.1 3.9c-.1.35.28.64.58.43l4.5-2.9c.53.07 1.08.11 1.66.11 5.52 0 10-3.92 10-8.76C22 6.92 17.52 3 12 3z"/>
+      </svg>
+      카카오톡 채널
+    </a>
+
   </div>
 </footer>
 
